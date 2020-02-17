@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts> 
+    <constant name="struts.multipart.maxSize" value="299999999" />
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+    
+    <package name="default" namespace="/" extends="struts-default">
+
+        <!-- ACCESO  A MENUS-->
+        <action name="acceso" class="action.Acceso_Action" method="verMevu">
+            <result name="SUCCESS">/pages/login.jsp</result>			              
+            <result name="ERROR">/pages/login.jsp</result>
+            <result name="input">/pages/login.jsp</result>
+            <result name="SESION" type="chain">cerrarSesion</result>
+        </action>
+		
+		
+        <action name="verAcceso" class="action.Acceso_Action" method="MuestraMenuPrincipalUsuario">
+            <result name="SUCCESS">/pages/menuServicioAdmon.jsp</result>			              
+            <result name="ERROR">/pages/login.jsp</result>
+            <result name="input">/pages/login.jsp</result>
+        </action>
+        <!--REGISTRO  -->				
+        <!-- CERRAR SESION -->
+        <action name="CerrarSesion" class="action.CerrarSesion" method="cerrar">  
+            <result name="SUCCESS" type="chain">acceso</result>
+            <result name="input" type="chain">acceso</result>
+        </action>	
+        
+		
+    </package>
+	
+</struts>

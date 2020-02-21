@@ -10,6 +10,9 @@ import beans.moduloAuxBean;
 import beans.moduloBean;
 import beans.usuarioBean;
 import com.opensymphony.xwork2.ActionSupport;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -29,6 +32,10 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
     private String modulo;
     private String nombreUsuario;
     private String tabSelect;
+    
+    public String CurpMs="AOTR041003HMCZPLA5";
+    public String CctMs="15EBH0100N";
+
     
     
      private String TipoError;
@@ -57,16 +64,30 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
      public String validarDatos() {
 
         //validando session***********************************************************************
-       
-
-        try {
-
-            
+ 
+        try {         
             System.out.println("CURP"+datos.getCURP()); 
                System.out.println("CCT"+datos.getCCT()); 
                System.out.println("TIPO"+datos.getTIPO()); 
+        String a=datos.getCURP();
+        String b=datos.getCCT();
                
-               addFieldError("ERRORDATOS", "No se encontrarón datos");
+      String Curp="CHIDO";
+      String Cct="CHIDO";
+
+               
+               if (a.equals(Curp) && b.equals(Cct)) {
+//abre el archivo
+                   try {
+                 File path = new File ("/home/gobierno/Descargas/hola.pdf");
+                 Desktop.getDesktop().open(path);
+                        }catch (IOException ex) {
+                 ex.printStackTrace();
+                                    }
+               }else{
+                   addFieldError("ERRORDATOS", "No se encontrarón datos");
+               }
+               
             
             
             

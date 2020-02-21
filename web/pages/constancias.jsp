@@ -22,7 +22,7 @@
   <title>Constancia de Estudios Electrónica</title>
   
       
-   <link type="text/css" href="themes/seitheme2/css/uikit.min.css?paxzil" rel="stylesheet" /> -->
+   <link type="text/css" href="themes/seitheme2/css/uikit.min.css?paxzil" rel="stylesheet" /> 
   <link href="themes/seitheme2/css/style.css?paxzil" rel="stylesheet" type="text/css" />
   <link href="themes/seitheme2/font-awesome/css/font-awesome.min.css?paxzil" rel="stylesheet" type="text/css" />
    <link type="text/css" href="css/menu_dd.css" rel="stylesheet" />
@@ -148,7 +148,14 @@
 
         <script type="text/javascript">
 
-            function guarda(accion){
+            function envio(accion){
+            	
+                document.formularioPrincipal.action = accion;
+                document.formularioPrincipal.submit();
+            }
+            
+            
+              function guarda(accion){
             	
                 document.forma.action = accion;
                 document.forma.submit();
@@ -206,14 +213,22 @@
         
         <div id="doc-container" >
           <span class="col-sm-2 col"></span>
-          <form id="FrmDoc" name="FrmDoc" method="post" action="consta.php" target="_blank" class="form-docdig container" novalidate style="width:95% !important;" >
-          	<input type="hidden" id="i" name="i" value="1">
+        
+          <s:form name="formularioPrincipal" id="formularioPrincipal" enctype="multipart/form-data">
+              
+              
+              
+              <input type="hidden" id="i" name="i" value="1"/>
             <div class="titulo">Constancia de Estudios Electrónica</div>
             <br>
             <div class="form-group row">
               <label for="TxtUsu" class="col-sm-2 col-form-label">CURP</label>
               <div class="col-sm-9">
-	              <input type="text" id="TxtCurp" name="TxtCurp" class="form-control form-control-sm validate[required,custom[curp]]" autocomplete="off" required>
+	              
+                  <s:textfield name="datos.CURP" id="CURP" cssStyle="width: 100%;" ></s:textfield>   
+                          
+                          
+                          
   	            <div class="invalid-feedback">Escriba una CURP correcta para el estudiante.</div>
               </div>
               <div class="text-center col-sm col-12">
@@ -223,8 +238,10 @@
             <div class="form-group row">
               <label for="TxtPsw" class="col-sm-2 col-form-label">CCT</label>
               <div class="col-sm-9">
-                <input type="text" id="TxtCct" name="TxtCct" class="form-control form-control-sm" autocomplete="off" required>
-                <div class="invalid-feedback" id="feedCCT">Escriba la Clave del Centro de Trabajo donde estudia.</div>
+                   <s:textfield name="datos.CCT" id="CCT"  cssStyle="width: 100%;"></s:textfield>   
+               
+                    
+                    <div class="invalid-feedback" id="feedCCT">Escriba la Clave del Centro de Trabajo donde estudia.</div>
               </div>
               <div class="text-center col-sm col-12">
                 <img src="images/info.png" class="rounded" alt="Ayuda" data-toggle="tooltip" title="" data-html="true" data-original-title="La Clave del Centro de Trabajo (CCT) se puede identificar en la boleta del estudiante.<br> <img src='images/boleta_muestra.png'>" style="cursor:help;" />
@@ -232,9 +249,9 @@
             </div>
             <div class="form-group row">
               <label for="LstMot" class="col-sm-4 col-form-label">Motivo de la constancia</label>
-              <div class="col-sm-3">
-                <select id="LstMot" name="LstMot" class="form-control form-control-sm" required>
-                	<option value="">Elija una opcion</option>
+              <div class="col-sm-6">
+                  <select id="LstMot" name="LstMot" class="form-control form-control-sm"  style="width: 100%;" required >
+                	
                   <option value="1">Solicitud de beca</option>
                   <option value="2">Solicitud de preinscripción escolar</option>
                   <option value="3">Tramite en alguna institución de salud</option>
@@ -272,11 +289,19 @@
               <div class="col-sm-2">&nbsp;</div>
             </div>
             
-            <div class="invalid-feedback" style="display:block !important; text-align:center;" id="Actions" ></div>
+           
             <center>
-            <button id="BtnNxt" class="btn btn-success " type="button" style="background-color:#71a447; border:0;" >Generar Constancia</button>
+               
+                  <a class="dropdown-item" style="background-color:#71a447; border:0; width: 50%; color: white; border-radius: 10px; margin-top: 10px;" href="Javascript:envio('validarDatos')">Generar Constancia</a>
+                
+          
             </center>
-          </form>
+            
+                <s:fielderror  fieldName="ERRORDATOS" cssClass="col-lg-12 alert alert-danger"></s:fielderror>    
+                   
+                   
+            
+         </s:form>
           <span class="col-sm-2 col"></span>
         </div>
         <div class="field-item even" property="content:encoded">

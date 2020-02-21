@@ -1,0 +1,64 @@
+html,
+#doc-container {
+	height:auto !important;
+	border:#099 0px dotted;
+}
+
+#doc-container {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #FFF;
+}
+
+#doc-container .form-docdig {
+	border:#71a447 1px solid;
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+	border-radius:10px;
+}
+#doc-container .form-docdig .checkbox {
+  font-weight: 400;
+}
+#doc-container .form-docdig .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 1px;
+  font-size: 12px;
+	width:95%;
+}
+#doc-container .form-docdig label {
+	font-size: 12px;
+	font-weight:bold;
+	/* text-align:right; */
+	color:#000;
+}
+#doc-container .form-docdig .form-control:focus {
+  z-index: 2;
+}
+
+#doc-container .form-docdig input {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#doc-container .form-docdig .titulo{
+	background-color:#71a447;
+	color:#FFF;
+	padding:5px; 
+	border-radius:5px;
+	text-transform:uppercase;
+	text-align:center;
+	box-shadow: 5px 5px 5px grey;
+}

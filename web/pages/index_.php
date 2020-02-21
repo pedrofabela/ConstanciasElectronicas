@@ -1,0 +1,338 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="https://subfc.edomex.gob.mx/sites/subfc.edomex.gob.mx/files/indice_26.png" type="image/png" />
+  <link href="css/docdig.css" rel="stylesheet">
+	<style id="antiClickjack">body{display:none !important;}</style>
+  <script type="text/javascript">
+   if (self === top) {
+       var antiClickjack = document.getElementById("antiClickjack");
+       antiClickjack.parentNode.removeChild(antiClickjack);
+   } else {
+       top.location = self.location;
+   }
+  </script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+  
+  <title>Constancia de Estudios Electrónica</title>
+  <style type="text/css" media="all">
+  @import url("themes/seitheme2/css/uikit.min.css?paxzil");
+  @import url("themes/seitheme2/css/style.css?paxzil");
+  @import url("themes/seitheme2/font-awesome/css/font-awesome.min.css?paxzil");
+  </style>
+  <style type="text/css" media="menu">
+  @import url("css/menu_dd.css");
+  </style>
+  <style>
+	.tooltip-inner {
+		min-width:600px !important;
+	}
+	</style>
+  <style>
+	.flipswitch {
+		position: relative;
+		width: 50px;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select: none;
+	}
+	.flipswitch input[type=checkbox] {
+		display: none;
+	}
+	.flipswitch-label {
+		display: block;
+		overflow: hidden;
+		cursor: pointer;
+		border: 2px solid #999999;
+		border-radius: 5px;
+	}
+	.flipswitch-inner {
+		width: 200%;
+		margin-left: -100%;
+		-webkit-transition: margin 0.3s ease-in 0s;
+		-moz-transition: margin 0.3s ease-in 0s;
+		-ms-transition: margin 0.3s ease-in 0s;
+		-o-transition: margin 0.3s ease-in 0s;
+		transition: margin 0.3s ease-in 0s;
+	}
+	.flipswitch-inner:before, .flipswitch-inner:after {
+		float: left;
+		width: 50%;
+		height: 20px;
+		padding: 0;
+		line-height: 20px;
+		font-size: 12px;
+		color: white;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.flipswitch-inner:before {
+		content: "No";
+		padding-left: 10px;
+		background-color: #888888;
+		color: #FFF;
+		text-align: left;
+	}
+	.flipswitch-inner:after {
+		content: "Si";
+		padding-right: 10px;
+		background-color:#71a447;
+		color:#FFF;
+		text-align: right;
+	}
+	.flipswitch-switch {
+		width: 25px;
+		margin: -1px;
+		background: #FFFFFF;
+		border: 2px solid #999999;
+		border-radius: 9px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 35px;
+		-webkit-transition: all 0.3s ease-in 0s;
+		-moz-transition: all 0.3s ease-in 0s;
+		-ms-transition: all 0.3s ease-in 0s;
+		-o-transition: all 0.3s ease-in 0s;
+		transition: all 0.3s ease-in 0s;
+	}
+	.flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
+		margin-left: 0;
+	}
+	.flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
+		right: 0;
+	}
+</style>
+</head>
+<body>
+<section id="header" class="container ">
+<div class="row">
+  <div id="logoheader" class="col-12 col-sm-12" ><img src="images/banner_67.jpg" alt="" > </div>
+</div>
+</section>
+   
+
+<!-- inicia MAIN -->
+
+<div class="container" id="main_body" >
+	<!-- INICIA CONTENIDO -->
+<br>
+  <div class="container">
+    
+    <div class="row">
+      <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- inicia DERECHA -->
+        
+        <div class="clearfix"></div>
+				<h2>Constancia de Estudios Electrónica</h2>
+        
+        <div class="field-item even" property="content:encoded">
+          <p class="rtejustify" align="justify">El Gobierno del Estado de México a través de la Secretaría de Educación, proporciona en un formato único la Constancia de Estudios Electrónica, para las y los estudiantes de escuelas públicas de esta entidad, que se encuentren inscritos(as) al presente ciclo escolar. Este documento cuenta con firma electrónica avanzada y sello electrónico de la Secretaría de Educación, por lo que no requiere sello y firma autógrafa de la Institución educativa para tener validez oficial.</p>
+          <p class="rtejustify" align="justify">Para generar la constancia se requiere tener a la mano la siguiente información:</p>
+          <ol>
+          	<li>CURP (en caso de que no la conozcas consúltala 
+            <b><a href="#" id="LnkCURP" class="text-success">aquí</a></b>), recuerda que la CURP se conforma de 18 caracteres.</li>
+          	<li>Clave del Centro de Trabajo -CCT- 
+            (se puede consultar <b><a href="#" class="text-success" data-toggle="tooltip" data-html="true" data-original-title="La Clave del Centro de Trabajo (CCT) se puede identificar en la boleta del estudiante.<br> <img src='images/boleta_muestra.png' widht='540'>" >en la boleta</a></b>), 
+            en caso de no conocerla, puede solicitarla en su institución educativa.</li>
+          </ol>
+        </div>
+        
+        <div id="doc-container" >
+          <span class="col-sm-2 col"></span>
+          <form id="FrmDoc" name="FrmDoc" method="post" action="consta.php" target="_blank" class="form-docdig container" novalidate style="width:95% !important;" >
+          	<input type="hidden" id="i" name="i" value="1">
+            <div class="titulo">Constancia de Estudios Electrónica</div>
+            <br>
+            <div class="form-group row">
+              <label for="TxtUsu" class="col-sm-2 col-form-label">CURP</label>
+              <div class="col-sm-9">
+	              <input type="text" id="TxtCurp" name="TxtCurp" class="form-control form-control-sm validate[required,custom[curp]]" autocomplete="off" required>
+  	            <div class="invalid-feedback">Escriba una CURP correcta para el estudiante.</div>
+              </div>
+              <div class="text-center col-sm col-12">
+                <img src="images/info.png" class="rounded" data-toggle="tooltip" data-original-title="Recuerda que la CURP se conforma de 18 caracteres." style="cursor:help;" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="TxtPsw" class="col-sm-2 col-form-label">CCT</label>
+              <div class="col-sm-9">
+                <input type="text" id="TxtCct" name="TxtCct" class="form-control form-control-sm" autocomplete="off" required>
+                <div class="invalid-feedback" id="feedCCT">Escriba la Clave del Centro de Trabajo donde estudia.</div>
+              </div>
+              <div class="text-center col-sm col-12">
+                <img src="images/info.png" class="rounded" alt="Ayuda" data-toggle="tooltip" title="" data-html="true" data-original-title="La Clave del Centro de Trabajo (CCT) se puede identificar en la boleta del estudiante.<br> <img src='images/boleta_muestra.png'>" style="cursor:help;" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="LstMot" class="col-sm-4 col-form-label">Motivo de la constancia</label>
+              <div class="col-sm-3">
+                <select id="LstMot" name="LstMot" class="form-control form-control-sm" required>
+                	<option value="">Elija una opcion</option>
+                  <option value="1">Solicitud de beca</option>
+                  <option value="2">Solicitud de preinscripción escolar</option>
+                  <option value="3">Tramite en alguna institución de salud</option>
+                  <option value="4">Solicitud de cartilla militar</option>
+                  <option value="5">Otros servicios...</option>
+                </select>
+                <div class="invalid-feedback" id="feedCCT">Escriba la Clave del Centro de Trabajo donde estudia.</div>
+              </div>
+              <div class="col-sm-4">
+              	<input type="text" id="TxtMot" name="TxtMot" class="form-control form-control-sm" autocomplete="off" placeholder="¿Cuál el motivo de la solicitud?" required>
+              </div>
+              <div class="text-center col-sm col-12">
+              	<img src="images/info.png" class="rounded" data-toggle="tooltip" data-original-title="Es importante para nosotros conocer los motivo que le hacen solicitar una constancia de este tipo, gracias por su apoyo." style="cursor:help;" />
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-sm-2 col">&nbsp;</div>
+              <div class="col-sm-6 col-12 text-right"><small>He leido y acepto el Aviso de Privacidad</small>
+                <input type="hidden" id="Aux" name="Aux" class="form-check-input">
+                <div class="invalid-feedback">Debe leer y aceptar el Aviso de privacidad.</div>
+              </div>
+              <div class="text-center col-sm col-12">
+                <img src="images/info.png" class="rounded" alt="Ayuda" data-toggle="tooltip" title="" data-html="true" data-original-title="Para elegir tu respuesta haz clic en el botón <img src='images/btn_priv.png'>" style="cursor:help;" />
+              </div>
+              <div class="col-sm-2 col-12">
+                <div class="flipswitch">
+                  <input type="checkbox" name="flipswitch" id="flipswitch" class="flipswitch-cb" required checked >
+                  <label class="flipswitch-label" for="flipswitch">
+                      <div class="flipswitch-inner"></div>
+                      <div class="flipswitch-switch"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm-2">&nbsp;</div>
+            </div>
+            
+            <div class="invalid-feedback" style="display:block !important; text-align:center;" id="Actions" ></div>
+            <center>
+            <button id="BtnNxt" class="btn btn-success " type="button" style="background-color:#71a447; border:0;" >Generar Constancia</button>
+            </center>
+          </form>
+          <span class="col-sm-2 col"></span>
+        </div>
+        <div class="field-item even" property="content:encoded">
+          <div class="alert alert-secondary" role="alert">
+            <strong>Aviso de privacidad:</strong> Los datos personales que se recaban serán utilizados con la finalidad de buscar, generar, validar y obtener la constancia de estudios electrónica. Si deseas conocer nuestro aviso de privacidad integral, lo podrás consultar en el portal <a href="http:\\avisosdeprivacidad.edugem.gob.mx/" target="nueva">http:\\avisosdeprivacidad.edugem.gob.mx/</a>.
+          </div>
+        </div>
+        
+        
+        <!-- termina DERECHA -->
+      </div>
+    </div>
+    
+  </div>
+  <!-- TERMINA CONTENIDO -->
+</div>
+<br><br>
+<!-- termina MAIN -->
+<div class="container">
+	<footer>
+		<div class="row">
+      <div id="logoheader" class="col-12 col-sm-12" ><img src="images/footer_68.jpg" alt="" > </div>
+    </div>
+	</footer>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" ></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/languages/jquery.validationEngine-es.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/funciones.js" type="text/javascript"></script> 
+    <script>
+  
+    $(document).ready(function(){		
+			$("#TxtMot").hide();
+			
+  		$(function () {
+				$('[data-toggle="tooltip"]').tooltip()
+			})
+			
+			$('input[type=text]').blur(function () {
+				$(this).val($(this).val().toUpperCase()) ;
+			})
+
+			$("#LnkCURP").click(function(){
+				window.open("https://www.gob.mx/curp/");
+			})
+			
+			$("#LstMot").change(function(){
+				if($(this).val() == 5){
+					$("#TxtMot").show();
+					$("#TxtMot").val('');
+				}else{
+					$("#TxtMot").hide();
+					$("#TxtMot").val( $("#LstMot option:selected").text() );
+				}
+			})
+			
+      $("#BtnNxt").click(function(){
+				$('#Aux').removeClass('is-invalid');
+				var BndOK = true;
+				var form = $("#FrmDoc");
+				$("#Actions").html('');
+				$("#feedCCT").html('Escriba la Clave del Centro de Trabajo donde estudia.');
+				
+				if( (validar_cct_min( $("#TxtCct").val() )) === false ){
+					$("#feedCCT").html('La Clave del Centro de Trabajo es incorrecta.');
+					$('#TxtCct').addClass('is-invalid');
+					BndOK = false;
+					event.preventDefault();
+					event.stopPropagation();
+				}else{$('#TxtCct').removeClass('is-invalid');}
+				if( (validar_curp( $("#TxtCurp").val() )) === false ){
+					$('#TxtCurp').addClass('is-invalid');
+					BndOK = false;
+					event.preventDefault();
+					event.stopPropagation();
+				}else{$('#TxtCurp').removeClass('is-invalid');}	
+				
+				if($("#flipswitch").is(':checked')){
+					$('#Aux').addClass('is-invalid');
+					BndOK = false;
+					event.preventDefault();
+					event.stopPropagation();
+				}else	if(BndOK){	// use Ajax
+					var datos = form.serializeArray();
+					$.ajax({
+						dataType: "html",
+						contentType: "application/x-www-form-urlencoded",
+						url:'verif_sol.php',
+						data:datos,
+						type:'POST',
+						success: function(msg) {
+							if (msg.toUpperCase().indexOf('ERROR:') == -1) {
+								//alert('todo bien');
+								form.removeClass('was-validated');
+								$("#doc-container").html(msg);
+							}else{
+								var res = msg.replace("ERROR: ", "") + '</div><div>&nbsp;</div>';
+								$("#Actions").html(res);
+							}
+						}
+					})	        	
+				}
+				form.addClass('was-validated');
+      });
+			
+    })
+    
+  </script>
+  </body>
+</html>

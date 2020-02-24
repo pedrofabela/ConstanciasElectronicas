@@ -176,7 +176,7 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
                 case 8: return "CONSTANCIA_MS_SEX";
                 case 9: return "CONSTANCIA_SUP_TER";
                 default: 
-                    addActionError(getText("Faltan datos"));
+                    addFieldError("ERRORDATOS", "No se encontrarón datos acerca del alumno");
                     return "SUCCESS";
                     
             }

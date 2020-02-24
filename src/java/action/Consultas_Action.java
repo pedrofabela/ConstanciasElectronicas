@@ -5,6 +5,8 @@
  */
 package action;
 
+import static action.validacion_constancia.validarCURP;
+import static action.validacion_constancia.validarCct;
 import beans.datosBean;
 import beans.moduloAuxBean;
 import beans.moduloBean;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 import org.apache.struts2.interceptor.SessionAware;
 
 /**
@@ -104,64 +107,28 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
         curp=datos.getCURP();
         cct=datos.getCCT();
         
-        System.out.println(curp);
-        System.out.println(cct);
-        //Preescolar
-        if(curp.equals(curp_pre_pri_grado) && cct.equals(cct_pre_pri_grado)){
-            System.out.println("Preescolar");
-            opcion_constancia=1;
+        
+        if (validarCURP(curp)==true) {
+            
+        }else{
+            addFieldError("ERRORDATOS", "La CURP es invalida");
         }
-        if(curp.equals(curp_pre_seg_grado) && cct.equals(cct_pre_seg_grado)){
-            System.out.println("Preescolar");
-            opcion_constancia=2;
-        }
-        //Primaria
-        if(curp.equals(curp_pri_pri_grado) && cct.equals(cct_pri_pri_grado)){
-            System.out.println("Primaria");
-            opcion_constancia=3;
-        }
-        if(curp.equals(curp_pri_cua_grado) && cct.equals(cct_pri_cua_grado)){
-            System.out.println("Primaria");
-            opcion_constancia=4;
-        }
-        //Secundaria
-        if(curp.equals(curp_sec_pri_grado) && cct.equals(cct_sec_pri_grado)){
-            System.out.println("Secundaria");
-            opcion_constancia=5;
-        }
-        if(curp.equals(curp_sec_ter_grado) && cct.equals(cct_sec_ter_grado)){
-            System.out.println("Secundaria");
-            opcion_constancia=6;
-        }
-        //Media superior
-        if(curp.equals(curp_ms_pri_grado) && cct.equals(cct_ms_pri_grado)){
-            System.out.println("Media superior");
-            opcion_constancia=7;
-        }
-        if(curp.equals(curp_ms_sex_grado) && cct.equals(cct_ms_sex_grado)){
-            System.out.println("Media superior");
-            opcion_constancia=8;
-        }
-        //Superior
-        if(curp.equals(curp_sup_ter_grado) && cct.equals(cct_sup_ter_grado)){
-            System.out.println("Superior");
-            opcion_constancia=9;
+
+        if (validarCct(cct)==true) {
+            
+        }else{
+            addFieldError("ERRORDATOS", "La CCT es invalida");
         }
         
+        
+        if(validarCURP(curp)==true && validarCct(cct)==true){
+            validar_datos_ingresados();
+        }
+
+        //System.out.println(curp);
+        //System.out.println(cct);
+        
         try {    
-            
-            //pdf
-            /*
-            case 1: return "CONSTANCIA_PRE_PRI";
-            case 2: return "CONSTANCIA_PRE_SEG";
-            case 3: return "CONSTANCIA_PRI_PRI";
-            case 4: return "CONSTANCIA_PRI_CUA";
-            case 5: return "CONSTANCIA_SEC_PRI";
-            case 6: return "CONSTANCIA_SEC_TER";
-            case 7: return "CONSTANCIA_MS_PRI";
-            case 8: return "CONSTANCIA_MS_SEX";
-            case 9: return "CONSTANCIA_SUP_TER";
-            */
             
             System.out.println(opcion_constancia);
             
@@ -283,7 +250,82 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
         this.modulosAUXP = modulosAUXP;
     }
     
+    /*
+    public static boolean validarCURP(String curp){ 
+            String regex =
+            "[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}" +
+            "(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])" +
+            "[HM]{1}" +
+            "(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)" +
+            "[B-DF-HJ-NP-TV-Z]{3}" +
+            "[0-9A-Z]{1}[0-9]{1}$";
+            Pattern patron = Pattern.compile(regex);
+            if(!patron.matcher(curp).matches())
+            { return false;
+            }else
+            { return true;
+        }
+    }
     
-    
+        public static boolean validarCct(String cct){ 
+            //CIML980829HMCNRS06
+            //15 + EPR + 0304 + R
+            //nn.LLL.nnnn.L
+            String reggueton = "[15]{2}[A-Z]{3}[0-9]{4}[A-Z]{1}$";
+            Pattern patron = Pattern.compile(reggueton);
+            if(!patron.matcher(cct).matches())
+            { return false;
+            }else
+            { return true;
+            }
+        }*/
+        
+        public void validar_datos_ingresados(){
+            //Preescolar
+        if(curp.equals(curp_pre_pri_grado) && cct.equals(cct_pre_pri_grado)){
+            System.out.println("Preescolar");
+            opcion_constancia=1;
+        }
+        if(curp.equals(curp_pre_seg_grado) && cct.equals(cct_pre_seg_grado)){
+            System.out.println("Preescolar");
+            opcion_constancia=2;
+        }
+        //Primaria
+        if(curp.equals(curp_pri_pri_grado) && cct.equals(cct_pri_pri_grado)){
+            System.out.println("Primaria");
+            opcion_constancia=3;
+        }
+        if(curp.equals(curp_pri_cua_grado) && cct.equals(cct_pri_cua_grado)){
+            System.out.println("Primaria");
+            opcion_constancia=4;
+        }
+        //Secundaria
+        if(curp.equals(curp_sec_pri_grado) && cct.equals(cct_sec_pri_grado)){
+            System.out.println("Secundaria");
+            opcion_constancia=5;
+        }
+        if(curp.equals(curp_sec_ter_grado) && cct.equals(cct_sec_ter_grado)){
+            System.out.println("Secundaria");
+            opcion_constancia=6;
+        }
+        //Media superior
+        if(curp.equals(curp_ms_pri_grado) && cct.equals(cct_ms_pri_grado)){
+            System.out.println("Media superior");
+            opcion_constancia=7;
+        }
+        if(curp.equals(curp_ms_sex_grado) && cct.equals(cct_ms_sex_grado)){
+            System.out.println("Media superior");
+            opcion_constancia=8;
+        }
+        //Superior
+        if(curp.equals(curp_sup_ter_grado) && cct.equals(cct_sup_ter_grado)){
+            System.out.println("Superior");
+            opcion_constancia=9;
+        }
+        
+        
+        
+        
+        }
     
 }

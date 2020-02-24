@@ -378,6 +378,11 @@
 					event.preventDefault();
 					event.stopPropagation();
 				}else{$('#TxtCct').removeClass('is-invalid');}
+                                
+                                if(validarCURP((datos.getCURP()))=== false){
+                                    
+                                }
+                                
 				if( (validar_curp( $("#TxtCurp").val() )) === false ){
 					$('#TxtCurp').addClass('is-invalid');
 					BndOK = false;

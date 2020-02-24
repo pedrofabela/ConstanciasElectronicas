@@ -24,6 +24,14 @@ public class validacion_constancia extends ActionSupport implements SessionAware
         }else{
             System.out.println("No es una curp");
         }
+        
+        String a1="15EPR0304R";
+        String a2="20EPR0304F";
+        if (validarCct(a1)==true) {
+            System.out.println("Si es una CCT");
+        }else{
+            System.out.println("No es una CCT");
+        }
     }
     
     
@@ -42,7 +50,22 @@ public class validacion_constancia extends ActionSupport implements SessionAware
             { return true;
         }
     }
-
+    
+        public static boolean validarCct(String cct){ 
+            //CIML980829HMCNRS06
+            //15 + EPR + 0304 + R
+            //nn.LLL.nnnn.L
+            String reggueton = "[15]{2}[A-Z]{3}[0-9]{4}[A-Z]{1}$";
+            Pattern patron = Pattern.compile(reggueton);
+            if(!patron.matcher(cct).matches())
+            { return false;
+            }else
+            { return true;
+        }
+            //
+            
+            
+    }
     @Override
     public void setSession(Map<String, Object> map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

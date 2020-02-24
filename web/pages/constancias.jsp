@@ -37,84 +37,7 @@
 		min-width:600px !important;
 	}
 	</style>
-  <style>
-	.flipswitch {
-		position: relative;
-		width: 50px;
-		-webkit-user-select:none;
-		-moz-user-select:none;
-		-ms-user-select: none;
-	}
-	.flipswitch input[type=checkbox] {
-		display: none;
-	}
-	.flipswitch-label {
-		display: block;
-		overflow: hidden;
-		cursor: pointer;
-		border: 2px solid #999999;
-		border-radius: 5px;
-	}
-	.flipswitch-inner {
-		width: 200%;
-		margin-left: -100%;
-		-webkit-transition: margin 0.3s ease-in 0s;
-		-moz-transition: margin 0.3s ease-in 0s;
-		-ms-transition: margin 0.3s ease-in 0s;
-		-o-transition: margin 0.3s ease-in 0s;
-		transition: margin 0.3s ease-in 0s;
-	}
-	.flipswitch-inner:before, .flipswitch-inner:after {
-		float: left;
-		width: 50%;
-		height: 20px;
-		padding: 0;
-		line-height: 20px;
-		font-size: 12px;
-		color: white;
-		font-family:Arial, Helvetica, sans-serif;
-		font-weight: bold;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	.flipswitch-inner:before {
-		content: "No";
-		padding-left: 10px;
-		background-color: #888888;
-		color: #FFF;
-		text-align: left;
-	}
-	.flipswitch-inner:after {
-		content: "Si";
-		padding-right: 10px;
-		background-color:#71a447;
-		color:#FFF;
-		text-align: right;
-	}
-	.flipswitch-switch {
-		width: 25px;
-		margin: -1px;
-		background: #FFFFFF;
-		border: 2px solid #999999;
-		border-radius: 9px;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 35px;
-		-webkit-transition: all 0.3s ease-in 0s;
-		-moz-transition: all 0.3s ease-in 0s;
-		-ms-transition: all 0.3s ease-in 0s;
-		-o-transition: all 0.3s ease-in 0s;
-		transition: all 0.3s ease-in 0s;
-	}
-	.flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
-		margin-left: 0;
-	}
-	.flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
-		right: 0;
-	}
-</style>
+  
     
     
     
@@ -260,12 +183,14 @@
                 </select>
                 <div class="invalid-feedback" id="feedCCT">Escriba la Clave del Centro de Trabajo donde estudia.</div>
               </div>
-              <div class="col-sm-4">
-              	<input type="text" id="TxtMot" name="TxtMot" class="form-control form-control-sm" autocomplete="off" placeholder="¿Cuál el motivo de la solicitud?" required>
-              </div>
+              
+              
+              
+              
               <div class="text-center col-sm col-12">
               	<img src="images/info.png" class="rounded" data-toggle="tooltip" data-original-title="Es importante para nosotros conocer los motivo que le hacen solicitar una constancia de este tipo, gracias por su apoyo." style="cursor:help;" />
               </div>
+              
             </div>
             
             <div class="form-group row">
@@ -275,16 +200,13 @@
                 <div class="invalid-feedback">Debe leer y aceptar el Aviso de privacidad.</div>
               </div>
               <div class="text-center col-sm col-12">
-                <img src="images/info.png" class="rounded" alt="Ayuda" data-toggle="tooltip" title="" data-html="true" data-original-title="Para elegir tu respuesta haz clic en el botón <img src='images/btn_priv.png'>" style="cursor:help;" />
+                <!-- <img src="images/info.png" class="rounded" alt="Ayuda" data-toggle="tooltip" title="" data-html="true" data-original-title="Para elegir tu respuesta haz clic en el botón <img src='images/btn_priv.png'>" style="cursor:help;" /> 
+                -->
               </div>
               <div class="col-sm-2 col-12">
-                <div class="flipswitch">
-                  <input type="checkbox" name="flipswitch" id="flipswitch" class="flipswitch-cb" required checked >
-                  <label class="flipswitch-label" for="flipswitch">
-                      <div class="flipswitch-inner"></div>
-                      <div class="flipswitch-switch"></div>
-                  </label>
-                </div>
+              <s:checkbox name="datos.AVISOS" id="AVISOS">
+                  
+              </s:checkbox>
               </div>
               <div class="col-sm-2">&nbsp;</div>
             </div>

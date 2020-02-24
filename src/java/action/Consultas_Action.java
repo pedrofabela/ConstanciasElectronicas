@@ -40,6 +40,7 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
     public String curp;
     public String cct;
     public int opcion_constancia;
+    public boolean avisos=false;
     
     //variables de cct y curps
     
@@ -106,29 +107,27 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
         
         curp=datos.getCURP();
         cct=datos.getCCT();
+        avisos=datos.isAVISOS();
         
         
-        if (validarCURP(curp)==true) {
+        
+        
+        
+        
+        if(validarCURP(curp)!=true || validarCct(cct)!=true || avisos==false){
+            if (validarCURP(curp)!=true) {
+                addFieldError("ERRORDATOS", "Escriba una CURP correcta para el estudiante");
+            }
+            if (validarCct(cct)!=true) {
+                addFieldError("ERRORDATOS", "La Clave de Centro de Trabajo es incorrecta");
+            }
+            if (avisos==false) {
+                addFieldError("ERRORDATOS", "Debe leer y aceptar el Aviso de privacidad");
+            }
             
         }else{
-            addFieldError("ERRORDATOS", "La CURP es invalida");
-        }
-
-        if (validarCct(cct)==true) {
-            
-        }else{
-            addFieldError("ERRORDATOS", "La CCT es invalida");
-        }
-        
-        
-        if(validarCURP(curp)==true && validarCct(cct)==true){
             validar_datos_ingresados();
-        }
-
-        //System.out.println(curp);
-        //System.out.println(cct);
-        
-        try {    
+            try {    
             
             System.out.println(opcion_constancia);
             
@@ -143,10 +142,40 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
                 case 8: return "CONSTANCIA_MS_SEX";
                 case 9: return "CONSTANCIA_SUP_TER";
                 default: 
-                    addFieldError("ERRORDATOS", "No se encontrarón datos acerca del alumno");
+                    addFieldError("ERRORDATOS", "No se encontrarón datos acerca del alumno, verifique los datos ingresados");
                     return "SUCCESS";
                     
             }
+        } catch (Exception e) {
+
+            TipoException = e.getMessage();
+            return "ERROR";
+        }
+        }
+
+        //System.out.println(curp);
+        //System.out.println(cct);
+        
+        
+        try {    
+            /**/
+            System.out.println(opcion_constancia);
+            /*
+            switch(opcion_constancia){
+                case 1: return "CONSTANCIA_PRE_PRI";
+                case 2: return "CONSTANCIA_PRE_SEG";
+                case 3: return "CONSTANCIA_PRI_PRI";
+                case 4: return "CONSTANCIA_PRI_CUA";
+                case 5: return "CONSTANCIA_SEC_PRI";
+                case 6: return "CONSTANCIA_SEC_TER";
+                case 7: return "CONSTANCIA_MS_PRI";
+                case 8: return "CONSTANCIA_MS_SEX";
+                case 9: return "CONSTANCIA_SUP_TER";
+                default: 
+                    //addFieldError("ERRORDATOS", "No se encontrarón datos acerca del alumno");
+                    return "SUCCESS";
+            }*/
+            return "SUCCESS";
         } catch (Exception e) {
 
             TipoException = e.getMessage();

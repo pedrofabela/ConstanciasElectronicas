@@ -15,6 +15,18 @@ public class datosBean {
  private String CCT;
  private String TIPO;
  
+ private boolean AVISOS;
+
+    public boolean isAVISOS() {
+        return AVISOS;
+    }
+
+    public void setAVISOS(boolean AVISOS) {
+        this.AVISOS = AVISOS;
+    }
+ 
+ 
+ 
  
  
 

@@ -14,15 +14,28 @@
 
         <!-- ACCESO  A MENUS-->
         <action name="acceso" class="action.Acceso_Action" method="verMevu">
-            <result name="SUCCESS">/pages/login.jsp</result>			              
+            <result name="SUCCESS">/pages/login.jsp</result>
             <result name="ERROR">/pages/login.jsp</result>
             <result name="input">/pages/login.jsp</result>
             <result name="SESION" type="chain">cerrarSesion</result>
+            
         </action>
         
         
          <action name="validarDatos" class="action.Consultas_Action" method="validarDatos">
             <result name="SUCCESS">/pages/constancias.jsp</result>	
+            
+            <result name="CONSTANCIA_PRE_PRI">/pages/pdf/constancias_pre_pri_grado.pdf</result>
+            <result name="CONSTANCIA_PRE_SEG">/pages/pdf/constancias_pre_seg_grado.pdf</result>
+            <result name="CONSTANCIA_PRI_PRI">/pages/pdf/constancias_pri_pri_grado.pdf</result>
+            <result name="CONSTANCIA_PRI_CUA">/pages/pdf/constancias_pri_cua_grado.pdf</result>
+            <result name="CONSTANCIA_SEC_PRI">/pages/pdf/constancias_sec_pri_grado.pdf</result>
+            <result name="CONSTANCIA_SEC_TER">/pages/pdf/constancias_sec_ter_grado.pdf</result>
+            <result name="CONSTANCIA_MS_PRI">/pages/pdf/constancias_ms_pri_grado.pdf</result>
+            <result name="CONSTANCIA_MS_SEX">/pages/pdf/constancias_ms_sex_grado.pdf</result>
+            <result name="CONSTANCIA_SUP_TER">/pages/pdf/constancias_sup_ter_grado.pdf</result>	
+            
+            
             <result name="SUCCESS1">/constancias/constancias.jsp</result>			              
             <result name="ERROR">/pages/constancias.jsp</result>
             <result name="input">/pages/constancias.jsp</result>

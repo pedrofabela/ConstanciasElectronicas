@@ -22,7 +22,7 @@ import org.apache.struts2.interceptor.SessionAware;
  */
 public class Consultas_Action extends ActionSupport implements SessionAware {
     
-     private usuarioBean usuariocons;
+    private usuarioBean usuariocons;
     private String cveusuario;
     private String pasusuario;
     private String nomModulo;
@@ -31,8 +31,49 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
     private String tabSelect;
     
     
-     private String TipoError;
+    private String TipoError;
     private String TipoException;
+    
+    public String curp;
+    public String cct;
+    public int opcion_constancia;
+    
+    //variables de cct y curps
+    
+    //Preescolar
+    public String curp_pre_pri_grado = "ROLA040927HMCDNBA9";
+    public String cct_pre_pri_grado = "15EJN2273L";
+    public String curp_pre_seg_grado = "MAGA041210HMCRNRA4";
+    public String cct_pre_seg_grado = "15EJN3979F";
+
+    //Primaria
+    public String curp_pri_pri_grado = "MAGG041007MMCRTRA5";
+    public String cct_pri_pri_grado = "15EPR1210J";
+    public String curp_pri_cua_grado = "MEDA030901HMCNNBA9";
+    public String cct_pri_cua_grado = "15EPR1210J";
+
+
+    //Secundaria
+    public String curp_sec_pri_grado = "ROAR040603HMCDDNA8";
+    public String cct_sec_pri_grado = "15EES0666U";
+    public String curp_sec_ter_grado = "SAAR020708MOCNRQA2";
+    public String cct_sec_ter_grado = "15EES0666U";
+
+    //Media superior
+    public String curp_ms_pri_grado = "AOTR041003HMCZPLA5";
+    public String cct_ms_pri_grado = "15EBH0100N";
+    public String curp_ms_sex_grado = "TOGE850412MMCLVL02";
+    public String cct_ms_sex_grado = "15EBH0340M";
+
+    //Normal y superior
+    public String curp_sup_ter_grado = "CEGY041120MMCRRRB0";
+    public String cct_sup_ter_grado = "15XXU90034Q";
+    
+    
+    
+    
+    
+    
     
     datosBean datos=new datosBean();
  
@@ -52,35 +93,98 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
     public Map getSession() {
         return session;
     }
+    
+    
  
     
-     public String validarDatos() {
+    public String validarDatos() {
 
         //validando session***********************************************************************
-       
-
-        try {
-
+        
+        curp=datos.getCURP();
+        cct=datos.getCCT();
+        
+        System.out.println(curp);
+        System.out.println(cct);
+        //Preescolar
+        if(curp.equals(curp_pre_pri_grado) && cct.equals(cct_pre_pri_grado)){
+            System.out.println("Preescolar");
+            opcion_constancia=1;
+        }
+        if(curp.equals(curp_pre_seg_grado) && cct.equals(cct_pre_seg_grado)){
+            System.out.println("Preescolar");
+            opcion_constancia=2;
+        }
+        //Primaria
+        if(curp.equals(curp_pri_pri_grado) && cct.equals(cct_pri_pri_grado)){
+            System.out.println("Primaria");
+            opcion_constancia=3;
+        }
+        if(curp.equals(curp_pri_cua_grado) && cct.equals(cct_pri_cua_grado)){
+            System.out.println("Primaria");
+            opcion_constancia=4;
+        }
+        //Secundaria
+        if(curp.equals(curp_sec_pri_grado) && cct.equals(cct_sec_pri_grado)){
+            System.out.println("Secundaria");
+            opcion_constancia=5;
+        }
+        if(curp.equals(curp_sec_ter_grado) && cct.equals(cct_sec_ter_grado)){
+            System.out.println("Secundaria");
+            opcion_constancia=6;
+        }
+        //Media superior
+        if(curp.equals(curp_ms_pri_grado) && cct.equals(cct_ms_pri_grado)){
+            System.out.println("Media superior");
+            opcion_constancia=7;
+        }
+        if(curp.equals(curp_ms_sex_grado) && cct.equals(cct_ms_sex_grado)){
+            System.out.println("Media superior");
+            opcion_constancia=8;
+        }
+        //Superior
+        if(curp.equals(curp_sup_ter_grado) && cct.equals(cct_sup_ter_grado)){
+            System.out.println("Superior");
+            opcion_constancia=9;
+        }
+        
+        try {    
             
-            System.out.println("CURP"+datos.getCURP()); 
-               System.out.println("CCT"+datos.getCCT()); 
-               System.out.println("TIPO"+datos.getTIPO()); 
-               
-               addFieldError("ERRORDATOS", "No se encontrarón datos");
+            //pdf
+            /*
+            case 1: return "CONSTANCIA_PRE_PRI";
+            case 2: return "CONSTANCIA_PRE_SEG";
+            case 3: return "CONSTANCIA_PRI_PRI";
+            case 4: return "CONSTANCIA_PRI_CUA";
+            case 5: return "CONSTANCIA_SEC_PRI";
+            case 6: return "CONSTANCIA_SEC_TER";
+            case 7: return "CONSTANCIA_MS_PRI";
+            case 8: return "CONSTANCIA_MS_SEX";
+            case 9: return "CONSTANCIA_SUP_TER";
+            */
             
+            System.out.println(opcion_constancia);
             
-            
-            
-          
-
-            return "SUCCESS";
-
+            switch(opcion_constancia){
+                case 1: return "CONSTANCIA_PRE_PRI";
+                case 2: return "CONSTANCIA_PRE_SEG";
+                case 3: return "CONSTANCIA_PRI_PRI";
+                case 4: return "CONSTANCIA_PRI_CUA";
+                case 5: return "CONSTANCIA_SEC_PRI";
+                case 6: return "CONSTANCIA_SEC_TER";
+                case 7: return "CONSTANCIA_MS_PRI";
+                case 8: return "CONSTANCIA_MS_SEX";
+                case 9: return "CONSTANCIA_SUP_TER";
+                default: 
+                    addActionError(getText("Faltan datos"));
+                    return "SUCCESS";
+                    
+            }
         } catch (Exception e) {
 
             TipoException = e.getMessage();
             return "ERROR";
         }
-
     } 
 
     public usuarioBean getUsuariocons() {

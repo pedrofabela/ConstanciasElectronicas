@@ -123,7 +123,7 @@
 				<h2>Constancia de Estudios Electrónica</h2>
         
         <div class="field-item even" property="content:encoded">
-          <p class="rtejustify" align="justify">El Gobierno del Estado de México a través de la Secretaría de Educación, proporciona en un formato único la Constancia de Estudios Electrónica, para las y los estudiantes de escuelas públicas de esta entidad, que se encuentren inscritos(as) al presente ciclo escolar. Este documento cuenta con firma electrónica avanzada y sello electrónico de la Secretaría de Educación, por lo que no requiere sello y firma autógrafa de la Institución educativa para tener validez oficial.</p>
+          <p class="rtejustify" align="justify">El Gobierno del Estado de México a través de la Secretaría de Educación, proporciona en un formato único la Constancia de Estudios Electrónica, para las y los estudiantes de escuelas públicas de nivel preescolar hasta superior de esta entidad, que se encuentren inscritos(as) al presente ciclo escolar.  Este documento cuenta con firma electrónica avanzada de las diferentes áreas de Control Escolar de la Secretaría de Educación, por lo que no requiere sello y firma autógrafa de la Institución educativa para tener validez oficial.</p>
           <p class="rtejustify" align="justify">Para generar la constancia se requiere tener a la mano la siguiente información:</p>
           <ol>
           	<li>CURP (en caso de que no la conozcas consúltala 
@@ -195,7 +195,7 @@
             
             <div class="form-group row">
               <div class="col-sm-2 col">&nbsp;</div>
-              <div class="col-sm-6 col-12 text-right"><small>He leido y acepto el Aviso de Privacidad</small>
+              <div class="col-sm-6 col-12 text-right"><small>He leído y acepto el Aviso de Privacidad</small> 
                 <input type="hidden" id="Aux" name="Aux" class="form-check-input">
                 <div class="invalid-feedback">Debe leer y aceptar el Aviso de privacidad.</div>
               </div>
@@ -228,7 +228,8 @@
         </div>
         <div class="field-item even" property="content:encoded">
           <div class="alert alert-secondary" role="alert">
-            <strong>Aviso de privacidad:</strong> Los datos personales que se recaban serán utilizados con la finalidad de buscar, generar, validar y obtener la constancia de estudios electrónica. Si deseas conocer nuestro aviso de privacidad integral, lo podrás consultar en el portal <a href="http:\\avisosdeprivacidad.edugem.gob.mx/" target="nueva">http:\\avisosdeprivacidad.edugem.gob.mx/</a>.
+              
+            <strong>Aviso de privacidad:</strong> Los datos personales que se recaban serán utilizados con la finalidad de buscar, generar, validar y obtener la constancia de estudios electrónica. Si deseas conocer nuestro aviso de privacidad integral, lo podrás consultar en el portal .<a href="http:\\avisosdeprivacidad.edugem.gob.mx/" target="nueva">http:\\avisosdeprivacidad.edugem.gob.mx/</a>
           </div>
         </div>
         

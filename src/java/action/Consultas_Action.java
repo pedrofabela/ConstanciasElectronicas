@@ -71,7 +71,7 @@ public class Consultas_Action extends ActionSupport implements SessionAware {
 
     //Normal y superior
     public String curp_sup_ter_grado = "CEGY041120MMCRRRB0";
-    public String cct_sup_ter_grado = "15XXU90034Q";
+    public String cct_sup_ter_grado = "15XXU9034Q";
     
     
     

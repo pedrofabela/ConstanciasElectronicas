@@ -13,10 +13,8 @@ import beans.moduloBean;
 import beans.usuarioBean;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 import org.apache.struts2.interceptor.SessionAware;
 
 /**

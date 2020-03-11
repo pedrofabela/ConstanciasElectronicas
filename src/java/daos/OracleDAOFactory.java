@@ -42,9 +42,9 @@ public class OracleDAOFactory implements DAOFactory {
    	//*/
     
     //DESARROLLO
-    private String username = "U_CONSTANCIAS2";	
+    private String username = "U_CONSTAELEC";	
 	private String url = "jdbc:oracle:thin:@10.33.220.169:1521:oraudai";	
-    private String password = "CON5#2020"; 
+    private String password = "C0NST4#18"; 
 	//*/
     
     public Statement getSt() {
@@ -65,7 +65,7 @@ public class OracleDAOFactory implements DAOFactory {
 
 //*	SIN POOL
 	public Connection createConnection() throws SQLException{
-		Constantes.enviaMensajeConsola("entre a los parametros de conexion");
+		Constantes.enviaMensajeConsola("entre a los parametros de conexion si a la BD");
 		conn = DriverManager.getConnection(url,username, password);
 		return conn;
 	}

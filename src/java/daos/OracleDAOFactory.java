@@ -110,6 +110,26 @@ public class OracleDAOFactory implements DAOFactory {
 		   conn.close();
 		}
 	}
+        
+        
+        public void Consulta(String tabla){
+                        try {
+                           String SQL = "SELECT * FROM "+tabla+"";
+                           Statement stmt = conn.createStatement();
+                           ResultSet rs = stmt.executeQuery(SQL);
+
+                           while (rs.next()) {
+                           System.out.println(rs.getString("NAMEUSUARIO") + ", " + rs.getString("PASSWORD"));
+                        }
+
+                          rs.close();
+                          stmt.close();
+                        }
+                        catch (Exception e) {
+                          e.printStackTrace();
+                        }
+
+        }
 
 	public void closeStatement() throws SQLException {
 		if(this.st!=null || !this.st.isClosed()) {

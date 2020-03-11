@@ -33,8 +33,13 @@ public class OracleDAOFactory implements DAOFactory {
     private Connection conn;
     private Statement st;
     private PreparedStatement pstmt;
-    
-   
+    public String nivel_edu;
+    public String niv1="PREESCOLAR";
+    public String niv2="PRIMARIA";
+    public String niv3="SECUNDARIA";
+    public String niv4="MEDIA SUPERIOR";
+    public String niv5="SUPERIOR";
+  
      /*// PRODUCCION
     private String username = "SERVICIOSOCIAL";	
 	private String url = "jdbc:oracle:thin:@10.33.220.169:1521:oraudai";	
@@ -130,7 +135,72 @@ public class OracleDAOFactory implements DAOFactory {
                         }
 
         }
+        
+        public void Consulta(String cct, String curp){
+                        try {
+                           String SQL = "SELECT * FROM CEF_ESCUELAS WHERE CCT="+cct+"";
+                           Statement stmt = conn.createStatement();
+                           ResultSet rs = stmt.executeQuery(SQL);
+                           
+                           while (rs.next()) {
+                           System.out.println("NOMBRE: " + rs.getString("NOMBRE") + " Nivel: " + rs.getString("NIVEL"));
+                           
+                           nivel_edu=rs.getString("NIVEL");
+                           
+                               System.out.println(nivel_edu);
+                           
+                               if (nivel_edu.equals(niv1)) {
+                                   
+                               }
+                               if (nivel_edu.equals(niv2)) {
+                                   String SQL = "SELECT * FROM CEE_TBL_NIV2 WHERE CURP="+curp+"";
+                                   System.out.println("Calificacion: "+ rs.get);
+                                   System.out.println("NOMBRE: " + rs.getString("NOMBRE") + " Nivel: " + rs.getString("NIVEL"));
+                               }  
+                                   
+                               if (nivel_edu.equals(niv3)) {
+                                   
+                               }
+                               if (nivel_edu.equals(niv4)) {
+                                   
+                               }
+                               if (nivel_edu.equals(niv5)) {
+                                   
+                               }
+                              
+                           
+                        }
 
+                          rs.close();
+                          stmt.close();
+                        }
+                        catch (Exception e) {
+                          e.printStackTrace();
+                        }
+
+        }
+        
+        public void ConsultaPrimaria(String curp){
+                
+                try {
+                           String SQL = "SELECT * FROM CEE_TBL_NIV2 WHERE CURP="+curp+"";
+                           Statement stmt = conn.createStatement();
+                           ResultSet rs = stmt.executeQuery(SQL);
+
+                           while (rs.next()) {
+                           System.out.println(rs.getString("STATUS") + ", " + rs.getString("PFG1"));
+                           
+                        }
+                          rs.close();
+                          stmt.close();
+                        }
+                        catch (Exception e) {
+                          e.printStackTrace();
+                        }
+        }
+        
+        
+        
 	public void closeStatement() throws SQLException {
 		if(this.st!=null || !this.st.isClosed()) {
 		   //System.out.println(this.st.isClosed());

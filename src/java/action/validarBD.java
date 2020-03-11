@@ -18,7 +18,8 @@ public class validarBD {
         //DAOFactory conexion = new DAOFactory();
           OracleDAOFactory conexion = new OracleDAOFactory();
         conexion.createConnection();
-        conexion.Consulta("TBL_USUARIOS");
+        
+        conexion.Consulta("'15EPR0304R'", "'DISH910513HMCZLB19'");
         
     }
     

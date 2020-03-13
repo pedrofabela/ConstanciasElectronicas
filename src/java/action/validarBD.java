@@ -21,6 +21,8 @@ public class validarBD {
         
         conexion.Consulta("'15EPR0304R'", "'DISH910513HMCZLB19'");
         
+        
+        
     }
     
 }

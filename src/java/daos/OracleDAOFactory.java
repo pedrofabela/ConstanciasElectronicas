@@ -33,13 +33,7 @@ public class OracleDAOFactory implements DAOFactory {
     private Connection conn;
     private Statement st;
     private PreparedStatement pstmt;
-    public String nivel_edu;
-    public String niv1="PREESCOLAR";
-    public String niv2="PRIMARIA";
-    public String niv3="SECUNDARIA";
-    public String niv4="MEDIA SUPERIOR";
-    public String niv5="SUPERIOR";
-  
+
      /*// PRODUCCION
     private String username = "SERVICIOSOCIAL";	
 	private String url = "jdbc:oracle:thin:@10.33.220.169:1521:oraudai";	
@@ -135,8 +129,19 @@ public class OracleDAOFactory implements DAOFactory {
                         }
 
         }
+    
+    public String nivel_edu;
+    public String niv1="PREESCOLAR";
+    public String niv2="Primaria";
+    public String niv3="SECUNDARIA";
+    public String niv4="MEDIA SUPERIOR";
+    public String niv5="SUPERIOR";
+    public String curp_local;
+    public String curp_local2;
         
         public void Consulta(String cct, String curp){
+            
+            
                         try {
                            String SQL = "SELECT * FROM CEF_ESCUELAS WHERE CCT="+cct+"";
                            Statement stmt = conn.createStatement();
@@ -147,22 +152,100 @@ public class OracleDAOFactory implements DAOFactory {
                            
                            nivel_edu=rs.getString("NIVEL");
                            
-                               System.out.println(nivel_edu);
+                           
+                           //    System.out.println(nivel_edu);
+                               System.out.println("entra a validar nivel");
                            
                                if (nivel_edu.equals(niv1)) {
                                    
                                }
                                if (nivel_edu.equals(niv2)) {
-                                   String SQL = "SELECT * FROM CEE_TBL_NIV2 WHERE CURP="+curp+"";
-                                   System.out.println("Calificacion: "+ rs.get);
-                                   System.out.println("NOMBRE: " + rs.getString("NOMBRE") + " Nivel: " + rs.getString("NIVEL"));
+                                                            try {
+                                                                curp_local=curp;
+                                                               String SQL1 = "SELECT * FROM CEE_TBL_NIV2 WHERE CURP="+curp_local+"";
+                                                               //Statement stmt = conn.createStatement();
+                                                                rs = stmt.executeQuery(SQL1);
+                                                                    System.out.println("aquiii");
+
+
+                                                               while (rs.next()) {
+                                                                   //System.out.println("NOMBRE: " + rs.getString("NOMBRE") + " Nivel: " + rs.getString("NIVEL"));
+                                                                   
+                                                               //hacer modular 
+                                                                   String Status="";
+                                                                   int StatusBD=rs.getInt("ESTATUS");
+                                                                   switch(StatusBD){
+                                                                                        
+                                                                                        case 1 :Status="Regular";break; 
+                                                                                        case 2 :Status="Irregular";break; // break es opcional
+                                                                                        default : 
+                                                                                           Status="nulo";
+                                                                                     }
+                                                                  //hacer modular calcular grado
+                                                                  int gdoBD=rs.getInt("GRADO");
+                                                                  String gdo;
+                                                                  float promedio = 0;
+                                                                   switch(gdoBD){
+                                                                       
+                                                                                        
+                                                                                        case 1 :gdo="primero" ;break; 
+                                                                                        case 2 :gdo="del 1° año"; promedio=(rs.getInt("PFG1")+rs.getInt("PFG2"))/2;break; 
+                                                                                        case 3 :gdo="del 1°-2° año";promedio=(rs.getInt("PFG1")+rs.getInt("PFG2")+rs.getInt("PFG3"))/3;break; 
+                                                                                        case 4 :gdo="del 1°-3° año";break;
+                                                                                        case 5 :gdo="del 1°-4° año";promedio=(rs.getInt("PFG1")+rs.getInt("PFG2")+rs.getInt("PFG3")+rs.getInt("PFG4"))/4;break; 
+                                                                                        case 6 :gdo="del 1°-5° año";break; 
+                                                                                        default : 
+                                                                                           gdo="nulo";
+                                                                                     }
+                                                               System.out.println( rs.getString("CURP")+","+Status+","+ rs.getString("CCT")+",Promedio "+ gdo+":" + promedio+ ","+rs.getString("CICLOESC")+ ",");                      
+
+                                                               }
+                                                        
+                                                                   
+                                                            }
+                                                            catch (Exception e) {
+                                                              e.printStackTrace();
+                                                            }
+                             
                                }  
                                    
                                if (nivel_edu.equals(niv3)) {
                                    
                                }
                                if (nivel_edu.equals(niv4)) {
-                                   
+                                   curp_local=curp;
+                                                          try {
+                                                               String SQL1 = "SELECT * FROM CEE_TBL_NIV4 WHERE CURP="+curp+"";
+                                                               //Statement stmt = conn.createStatement();
+                                                                rs = stmt.executeQuery(SQL1);
+                                                               while (rs.next()) {
+                                                                   //System.out.println("NOMBRE: " + rs.getString("NOMBRE") + " Nivel: " + rs.getString("NIVEL"));
+                                                                   
+                                                               //hacer modular 
+                                                                   String Status="";
+                                                                   int StatusBD=rs.getInt("ESTATUS");
+                                                                   switch(StatusBD){
+                                                                                        
+                                                                                        case 1 :Status="Regular";
+                                                                                           break; 
+                                                                                        case 2 :Status="Irregular";
+                                                                                           
+                                                                                           break; // break es opcional
+                                                                                        default : 
+                                                                                           Status="nulo";
+                                                                                     }
+                                                                  //hacer modular
+                                                                   
+                                                               System.out.println(Status+ ","+ rs.getString("CCT")+",Promedio uno:" + rs.getString("PFG1")+ ","+rs.getString("CURP")+ ",");                      
+
+                                                               }
+                                                        
+                                                                   
+                                                            }
+                                                            catch (Exception e) {
+                                                              e.printStackTrace();
+                                                            }
+                             
                                }
                                if (nivel_edu.equals(niv5)) {
                                    
@@ -180,17 +263,21 @@ public class OracleDAOFactory implements DAOFactory {
 
         }
         
-        public void ConsultaPrimaria(String curp){
-                
-                try {
-                           String SQL = "SELECT * FROM CEE_TBL_NIV2 WHERE CURP="+curp+"";
+        
+        public void consulta_primaria(){
+            
+
+                            try {
+                           String SQL = "SELECT * FROM CEE_TBL_NIV2 WHERE CURP="+curp_local+"";
                            Statement stmt = conn.createStatement();
                            ResultSet rs = stmt.executeQuery(SQL);
+                                System.out.println("aquiii");
 
                            while (rs.next()) {
-                           System.out.println(rs.getString("STATUS") + ", " + rs.getString("PFG1"));
-                           
+                               //System.out.println("NOMBRE: " + rs.getString("NOMBRE") + " Nivel: " + rs.getString("NIVEL"));
+                           System.out.println("Promedio uno:" + rs.getString("PFG1"));
                         }
+
                           rs.close();
                           stmt.close();
                         }
